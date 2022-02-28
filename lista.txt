@@ -1,7 +1,8 @@
 lennin
 steven
-sabogal
 prieto
 noah
-sabogal
 melquiades
+coco
+personas
+tonto

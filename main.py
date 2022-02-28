@@ -1,4 +1,5 @@
 from list_modificator import List
+from game import game
 
 
 def configuracion():
@@ -16,9 +17,14 @@ def configuracion():
             print('ingresa un comando valido')
 
 
+def jugar():
+
+    game.eleccion()
+
+
 if __name__ == '__main__':
     while True:
-        opciones = {'jugar': 'h', 'configurar': configuracion}
+        opciones = {'jugar': jugar, 'configurar': configuracion}
         opt1 = input('''Que quieres hacer? 
     -jugar
     -configurar 
@@ -26,8 +32,8 @@ if __name__ == '__main__':
 
         if opt1 == 'exit':
             break
-        try:
-            opciones[opt1.strip()]()
 
-        except:
-            print('ingresa un comando valido')
+        opciones[opt1.strip()]()
+
+
+        print('ingresa un comando valido')
