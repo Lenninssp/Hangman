@@ -17,14 +17,9 @@ def configuracion():
             print('ingresa un comando valido')
 
 
-def jugar():
-
-    game.eleccion()
-
-
 if __name__ == '__main__':
     while True:
-        opciones = {'jugar': jugar, 'configurar': configuracion}
+        opciones = {'jugar': game, 'configurar': configuracion}
         opt1 = input('''Que quieres hacer? 
     -jugar
     -configurar 
@@ -33,7 +28,7 @@ if __name__ == '__main__':
         if opt1 == 'exit':
             break
 
-        opciones[opt1.strip()]()
-
+        eleccion=opciones[opt1.strip()]
+        eleccion()
 
         print('ingresa un comando valido')
