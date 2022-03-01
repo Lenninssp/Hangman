@@ -1,7 +1,8 @@
 import os
-"importamos os"
+
 
 class List:
+
     def add_word():
         word = input('>')
         with open('lista.txt', 'a') as f:

@@ -6,3 +6,4 @@ melquiades
 coco
 personas
 tonto
+cosmonauta
