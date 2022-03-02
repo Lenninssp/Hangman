@@ -16,19 +16,22 @@ def configuracion():
         except:
             print('ingresa un comando valido')
 
+def a1 ():
+    run = game()
+    run.eleccion()
+
 
 if __name__ == '__main__':
     while True:
-        opciones = {'jugar': game, 'configurar': configuracion}
+        opciones = {'jugar': a1, 'configurar': configuracion}
         opt1 = input('''Que quieres hacer? 
     -jugar
     -configurar 
-    -exit\n''')
+    -exit\n >''')
 
         if opt1 == 'exit':
             break
 
-        eleccion=opciones[opt1.strip()]
-        eleccion()
+        opciones[opt1.strip()]()
 
         print('ingresa un comando valido')
