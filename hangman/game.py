@@ -4,19 +4,27 @@ import random
 class game:
     
     def __init__ (self):
-        print('hola')
-        game.eleccion()
+        pass
 
     def juego(self):
-        ganar = False
         
-        while ganar == False:
-            #len_input= input()
-            print(self.lenn_palabra_descubierta, self.lenn_palabra_oculta)
+        lenn_palabra={ "".join(self.lenn_palabra_oculta) : self.lenn_palabra_descubierta}
+        
+        lenn_input= input()
+        print(lenn_palabra[self.lenn_palabra_descubierta])
             
+        while True:
+
+            if lenn_input == lenn_palabra [self.lenn_palabra_oculta]:
+                print('pasaste')
+                break
+                
+            else: 
+                print('intentalo otra vez')
+                        
             
     def eleccion(self):
-        with open('lista.txt', 'r') as f:
+        with open('/mnt/c/Users/lenni/Desktop/progamación/python/Proyectos/Hangman/hangman/lista.txt', 'r') as f:
             l = [a for a in f.readlines()]
             n=0
             for a in l:
@@ -28,9 +36,7 @@ class game:
                     num.append('_')
             self.lenn_palabra_descubierta= l[word-1]
             self.lenn_palabra_oculta= num
-            print(l[word-1])
-            print(''.join(num))
-            game.juego()
+            self.juego()
             return self
-            
-                
+        
+        
