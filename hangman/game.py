@@ -7,20 +7,25 @@ class game:
         pass
 
     def juego(self):
-        
-        lenn_palabra={ "".join(self.lenn_palabra_oculta) : self.lenn_palabra_descubierta}
-        
-        lenn_input= input()
-        print(lenn_palabra[self.lenn_palabra_descubierta])
-            
-        while True:
+        oculta= "".join(self.lenn_palabra_oculta)
+        lenn_palabra={ oculta : self.lenn_palabra_descubierta}
+        print(list(lenn_palabra)[0])
+        lenn_input= input('>')
 
-            if lenn_input == lenn_palabra [self.lenn_palabra_oculta]:
+        while True:
+            count=0
+            for _ in lenn_input.strip():
+                count +=1
+            if count > 1:
+                print('solo puedes poner un digito a la vez')    
+                lenn_input= input('>')
+            elif lenn_input.strip() != lenn_palabra [oculta]:
+                print('intentalo otra vez')
+                lenn_input= input('>')
+            elif lenn_input.strip() == lenn_palabra [oculta]: 
+                print(lenn_palabra[oculta])
                 print('pasaste')
                 break
-                
-            else: 
-                print('intentalo otra vez')
                         
             
     def eleccion(self):
